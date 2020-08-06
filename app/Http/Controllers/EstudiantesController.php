@@ -36,7 +36,8 @@ class EstudiantesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $estudiante = Estudiantes::create($request->all());
+        return $estudiante;
     }
 
     /**
