@@ -15,9 +15,9 @@ class CreateEstudiantesTable extends Migration
     {
         Schema::create('estudiantes', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('name');
+            $table->boolean('confirmed');
             $table->timestamps();
-            $table->string('name')->default('');
-            $table->boolean('active')->default(true);
         });
     }
 
