@@ -14,3 +14,7 @@ use Illuminate\Http\Request;
 */
 
 Route::apiResource("estudiantes", "EstudiantesController");
+
+Route::put('/estudiantesupdate/{id}', 'EstudiantesController@updatebyid');
+
+Route::delete('/estudiantesdelete/{id}', 'EstudiantesController@deletebyid');

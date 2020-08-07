@@ -84,4 +84,23 @@ class EstudiantesController extends Controller
     {
         //
     }
+    public function updatebyid(Request $request, $id){
+        $estudiantes = Estudiantes::find($id);
+        $estudiantes->name = $request->input('name');
+        $estudiantes->career = $request->input('career');
+        $estudiantes->confirmed = $request->input('confirmed');
+
+        $estudiantes->save();
+        return response()->json($estudiantes);
+    }
+
+    public function deletebyid(Request $request, $id){
+        $estudiantes = Estudiantes::find($id);
+        $estudiantes->name = $request->input('name');
+        $estudiantes->career = $request->input('career');
+        $estudiantes->confirmed = $request->input('confirmed');
+
+        $estudiantes->delete();
+        return response()->json(null, 204);
+    }
 }
